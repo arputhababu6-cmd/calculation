@@ -2,7 +2,7 @@
 ## AIM
 To develop an Android application that accepts two numbers from the user and displays their sum using Android Studio.
 
-APPARATUS / SOFTWARE REQUIRED
+## APPARATUS / SOFTWARE REQUIRED
 Android Studio (Electric Eel / Flamingo / latest version)
 
 Java JDK 8 or above
