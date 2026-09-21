@@ -64,11 +64,108 @@ Observe the result displayed in the Result field.
 
 Take a screenshot of the output for the record.
 
-PROGRAM CODE
-(a) activity_main.xml
-(paste the XML layout from earlier message)
+## PROGRAM CODE
+``` activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
 
-(b) MainActivity.java
-(paste the Java code from earlier message)
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Addition of Two Numbers"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
 
-## OUTPUT
+    <EditText
+        android:id="@+id/etNum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter First Number"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etNum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Second Number"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/etResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Result"
+        android:enabled="false"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>
+```
+```MainActivity.java
+package com.example.additionapp;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText etNum1, etNum2, etResult;
+    Button btnAdd;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Link UI components with Java objects
+        etNum1   = findViewById(R.id.etNum1);
+        etNum2   = findViewById(R.id.etNum2);
+        etResult = findViewById(R.id.etResult);
+        btnAdd   = findViewById(R.id.btnAdd);
+
+        // Set click listener on the button
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s1 = etNum1.getText().toString().trim();
+                String s2 = etNum2.getText().toString().trim();
+
+                // Validate input
+                if (s1.isEmpty() || s2.isEmpty()) {
+                    Toast.makeText(MainActivity.this,
+                            "Please enter both numbers", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Parse and calculate
+                double num1 = Double.parseDouble(s1);
+                double num2 = Double.parseDouble(s2);
+                double sum  = num1 + num2;
+
+                // Display the result
+                etResult.setText(String.valueOf(sum));
+            }
+        });
+    }
+}
+```
+
