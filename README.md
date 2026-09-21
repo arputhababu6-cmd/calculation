@@ -37,39 +37,6 @@ TextView / EditText	To display the result
 LinearLayout	To arrange widgets vertically
 The Button's click event is handled using setOnClickListener(), where the values from the EditTexts are read using getText().toString(), parsed using Double.parseDouble(), added, and displayed.
 
-## ALGORITHM
-START
-
-Create a new Android project with an Empty Activity.
-
-Design the layout (activity_main.xml) with:
-
-Two EditText fields (for entering numbers)
-
-One Button (to perform addition)
-
-One EditText/TextView (to display the result)
-
-In MainActivity.java, link all UI widgets using findViewById().
-
-Attach a click listener to the Add button.
-
-Inside the listener:
-
-Read the values from both EditText fields.
-
-Validate that neither field is empty.
-
-Convert strings to double using Double.parseDouble().
-
-Compute sum = num1 + num2.
-
-Display the result using setText().
-
-Handle invalid input using Toast messages.
-
-STOP
-
 ## PROCEDURE
 Launch Android Studio → New Project → Empty Views Activity.
 
