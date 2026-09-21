@@ -64,7 +64,8 @@ Observe the result displayed in the Result field.
 Take a screenshot of the output for the record.
 
 ## PROGRAM CODE
-``` activity_main.xml
+### activity_main.xml
+```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -115,7 +116,8 @@ Take a screenshot of the output for the record.
 
 </LinearLayout>
 ```
-```MainActivity.java
+### MainActivity.java
+```
 package com.example.additionapp;
 
 import android.os.Bundle;
@@ -167,4 +169,8 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+
+## Output
+<img width="1917" height="1021" alt="image" src="https://github.com/user-attachments/assets/79dd23e0-2f35-4edf-a69c-20e92982e709" />
+<img width="1917" height="1018" alt="image" src="https://github.com/user-attachments/assets/b44a12f3-d228-4819-8178-9375ef58d1f9" />
 
