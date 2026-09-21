@@ -1,4 +1,3 @@
-# calculation
 ## AIM
 To develop an Android application that accepts two numbers from the user and displays their sum using Android Studio.
 
